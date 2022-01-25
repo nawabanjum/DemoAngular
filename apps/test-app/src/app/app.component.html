@@ -1,0 +1,30 @@
+<header class="flex">
+  <h1>{{ 'WELCOME_BANNER' | i18next: {appname: title} }}</h1>
+</header>
+<main>
+  <p>
+    <code>{{exampleProp}}</code>
+  </p>
+  <h2>{{'COMPONENT_HERE' | i18next }}</h2>
+  <!-- <div class="table-filters-group">
+    <div class="button-group" style="padding: 3px 5px;">
+      <button class="btn btn-primary-special btn-small" type="button" [routerLink]="['Saleitems']">Sale items</button>
+      
+    </div>
+ 
+</div> -->
+</main>
+
+<div class="d-flex flex-column" style="min-height: 100vh;">
+  
+  <section role="main" class="flex-grow-1">
+      <router-outlet></router-outlet>
+
+      <nx-angular-test-add-item></nx-angular-test-add-item>
+      <div style="height: 10px;;"></div>
+<nx-angular-test-item-list></nx-angular-test-item-list>
+  </section>
+
+
+</div>
+

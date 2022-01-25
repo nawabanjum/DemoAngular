@@ -1,0 +1,46 @@
+<section>
+    <div class="container">
+      <div class="row">
+       
+      
+        <div class="col-md-12">
+         
+            <form [formGroup]="form" (ngSubmit)="addSaleItem()">
+               
+                          
+             <div class="row">
+
+           
+              <div class="col-md-6">
+                           
+                             <input formControlName="Title" id="" class="form-control" placeholder="Title"  [ngClass]="{ 'is-invalid': submitted && f.Title.errors }" type="text" />
+                            <div *ngIf="submitted && f.Title.errors" class="invalid-feedback">      
+                                <div *ngIf="f.Title.errors.required">Title is required</div>
+                          </div>
+              </div>
+              <div class="col-md-6">
+                          <input formControlName="Price" id="" class="form-control" placeholder="Price"  [ngClass]="{ 'is-invalid': submitted && f.Price.errors }" type="number" min="0.1"/>
+                          <div *ngIf="submitted && f.Price.errors" class="invalid-feedback">      
+                              <div *ngIf="f.Price.errors.required">Price is required</div>
+                        </div>
+              </div>
+             </div>
+             <div style="height: 10px;;"></div>
+             <div class="row">
+                <div class="col-md-10">
+                 <input formControlName="Description" id="" class="form-control" placeholder="Description"  type="text" />
+               
+              </div>
+              <div class="col-md-2" style="text-align: right;" >
+                <button type="submit" class="btn btn-primary" [disabled]="disableBtn">Save</button>
+             </div>
+            </div>
+             
+             
+           
+            </form>
+        </div>
+        </div>
+      </div>
+  
+  </section>

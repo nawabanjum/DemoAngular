@@ -1,0 +1,37 @@
+
+<table style="width:100%" id="SaleTable">
+    <thead>
+    <tr >
+      <td *ngFor="let c of SaleColumn">{{c}}</td> 
+      <td>Action</td>     
+    </tr>
+</thead>
+<tbody>
+
+  
+     <tr  *ngFor="let d of dataSource | async">
+      <td hidden>
+        {{d.Id}}
+      </td>
+      <td>
+        {{d.Title}}
+      </td>
+      <td>
+        {{d.Description}}
+      </td>
+      <td>
+        {{d.Price | currency:'GBP' }}
+      </td>
+      <td >
+       
+       <button [disabled]="d.Disabled"
+                            >Buy</button>
+      </td>
+    </tr>
+  
+        <tr *ngIf="!dataSource">
+          <td colspan="4">{{Empty}}</td>
+        </tr>         
+   
+      </tbody>
+  </table>
